@@ -1,8 +1,4 @@
-/**
- * Copyright 2020 ChainSafe Systems
- * SPDX-License-Identifier: LGPL-3.0-only
- */
-
+// var Web3 = require('web3');
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -13,7 +9,7 @@
  *
  * truffleframework.com/docs/advanced/configuration
  *
- * To deploy via Infura you'll need a wallet provider (like truffle-hdwallet-provider)
+ * To deploy via Infura you'll need a wallet provider (like @truffle/hdwallet-provider)
  * to sign your transactions before they're sent to a remote public node. Infura accounts
  * are available for free at: infura.io/register.
  *
@@ -23,7 +19,7 @@
  *
  */
 
-// const HDWalletProvider = require('truffle-hdwallet-provider');
+// const HDWalletProvider = require('@truffle/hdwallet-provider');
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
@@ -40,24 +36,31 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
-  plugins: ["solidity-coverage"],
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
-
-    geth: {
+    //
+    development: {
      host: "127.0.0.1",     // Localhost (default: none)
-     port: 8545,            // Standard Ethereum port (default: none)
-     network_id: "5",       // Any network (default: none)
+     port: 6789,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+     from: "atp18hqda4eajphkfarxaa2rutc5dwdwx9z5vy2nmh", //部署合约所使用的钱包地址
+    //  gas: 4700000,
+    //  gasPrice: 1,
     },
 
-    test: {
+    alaya: {
+      // provider: () => new Web3.providers.HttpProvider("https://openapi.alaya.network/rpc:6789"),
       host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
+      port: 6789,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
+      from: "atp18hqda4eajphkfarxaa2rutc5dwdwx9z5vy2nmh", //部署合约所使用的钱包地址
+      // gas: 4700000,
+      // gasPrice: 5000000004,
+      // timeout: 500000,
      },
     // Another network with more advanced options...
     // advanced: {
@@ -96,15 +99,15 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.6.12",       // Fetch exact version from solc-bin (default: truffle's version)
+      version: "^0.6.12",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      settings: {          // See the solidity docs for advice about optimization and evmVersion
-        optimizer: {
-          enabled: true,
-          runs: 200
-        },
+      // settings: {          // See the solidity docs for advice about optimization and evmVersion
+      //  optimizer: {
+      //    enabled: false,
+      //    runs: 200
+      //  },
       //  evmVersion: "byzantium"
-      }
+      // }
     }
   }
 }
