@@ -47,9 +47,9 @@ module.exports = {
      host: "127.0.0.1",     // Localhost (default: none)
      port: 6789,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
-     from: "atp18hqda4eajphkfarxaa2rutc5dwdwx9z5vy2nmh", //部署合约所使用的钱包地址
-    //  gas: 4700000,
-    //  gasPrice: 1,
+     from: "atx18hqda4eajphkfarxaa2rutc5dwdwx9z5xzkega", //部署合约所使用的钱包地址
+     gas: 4700000,
+     gasPrice: 1,
     },
 
     alaya: {
@@ -57,7 +57,7 @@ module.exports = {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 6789,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
-      from: "atp18hqda4eajphkfarxaa2rutc5dwdwx9z5vy2nmh", //部署合约所使用的钱包地址
+      from: "atx18hqda4eajphkfarxaa2rutc5dwdwx9z5xzkega", //部署合约所使用的钱包地址
       // gas: 4700000,
       // gasPrice: 5000000004,
       // timeout: 500000,

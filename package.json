@@ -45,5 +45,8 @@
   },
   "peerDependencies": {
     "ethers": ">= 5.0.0"
+  },
+  "dependencies": {
+    "web3": "github:PlatONnetwork/client-sdk-js#alaya-dev"
   }
 }
