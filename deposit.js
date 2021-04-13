@@ -1,22 +1,30 @@
+const { toUtf8Bytes } = require('ethers/utils');
 var Web3 = require('web3');
-const { hexToBytes, hexToUtf8, toUtf8 } = require('web3/packages/web3-utils');
+const { hexToBytes, utf8ToHex, bytesToHex } = require('web3/packages/web3-utils');
+const Helpers = require('./test/helpers');
 
-var web3 = new Web3('http://127.0.0.1:6789');
+var web3 = new Web3('http://47.110.34.31:6789');
+var expandDecimals = BigInt(1000000000000000000)
 
 ADMIN_ROLE = "0x0000000000000000000000000000000000000000000000000000000000000000";
 RELAYER_ROLE = "0xe2b7fb3b832174769106daebcfd6d1970523240dda11281102db9363b83b0dc4";
 MINTER_ROLE = "0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6";
 PAUSER_ROLE = "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a";
 
-adminAddress = "atx18hqda4eajphkfarxaa2rutc5dwdwx9z5xzkega";
-ghjieAddress = "atx1j4ncnc4ajm8ut0nvg2n34uedtz3kuecmsdf7qd";
-rjmanAddress = "atx1sy2tvmghdv47hwz89yu9wz2y29nd0frr0578e3";
+adminAddress = "atp18hqda4eajphkfarxaa2rutc5dwdwx9z5vy2nmh";
 
-bridgeAddress = "atx1762m2ryuvnnrk3d9q6gfy6whk29n59xu34typ5";
-handlerAddress = "atx1t3zvgf73mmhzax24epgv02vqznzw24a5m78cnz";
-erc20Address = "atx1lfhrcc6xectcfe850kf83rcntlw0ha7wck9qjz";
+// ghjieAddress = "atx1zu77fupk4knf96c3a8txttpdr7gxe3rcmpp42m";
+rjmanAddress = "atp1sy2tvmghdv47hwz89yu9wz2y29nd0frr9jzd2m";
+// Relayer1 = "atp1hfhgzgluf9qneuguyw36jrnnsexn388d2lu6xr";
+// Relayer2 = "atp1kaptzrfz7v8w4xn7xw88nuxmt5e5uyvhysxqth";
+// Relayer3 = "atp1tdk4rtlu3pv440r96hqn8s33et7kn25730tpjr";
+// #### RJman
+
+
+bridgeAddress = "atp15ysxv3f9qudxnlu8cel9sx6lp6asguful3yz5z";
+handlerAddress = "atp142a30tfa8jae8gpxhn2xye0hyy9xlmnaajpapa";
+erc20Address = "atp1s8y6ulfaajje430erl5nnf0q3szy0g5g7u03dt";
 resourceID = "0x0000000000000000000000000000000000000000000000000000000000000000";
-
 
 var bridge_abi = [
     {
@@ -989,7 +997,13 @@ bridge_contract.options.from = adminAddress;
 //     console.log(hash);
 // })
 
-bridge_contract.getPastEvents('Deposit', {
-    fromBlock: 0,
-    toBlock: 'latest'
-}, function(error, events){ console.log(events); });
+bridge_contract.getPastEvents('ProposalEvent', {
+     fromBlock: 0,
+     toBlock: 'latest'
+ }, function(error, events){ console.log(events); });
+
+// bridge_contract.methods.getProposal(
+//   1,
+//   134101, 
+//   "0x7ea4b942ab973337f68ba8be7c98b10418cc7da64b5763fdab574c1f124ca4ee").call()
+// .then(console.log);

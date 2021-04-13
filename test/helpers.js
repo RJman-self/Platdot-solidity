@@ -4,6 +4,8 @@
  */
 
  const Ethers = require('ethers');
+const { toUtf8Bytes } = require('ethers/utils');
+const { hexToBytes } = require('web3/packages/web3-utils');
 
  const blankFunctionSig = '0x00000000';
  const blankFunctionDepositerOffset = 0;
@@ -26,7 +28,8 @@
         toHex(tokenAmountOrID, 32).substr(2) +      // Token amount or ID to deposit (32 bytes)
         toHex(lenRecipientAddress, 32).substr(2) + // len(recipientAddress)          (32 bytes)
         recipientAddress.substr(2);               // recipientAddress               (?? bytes)
-};
+    };
+    
 
 const createERC721DepositProposalData = (
     tokenAmountOrID, lenRecipientAddress,
