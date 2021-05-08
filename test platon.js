@@ -1096,13 +1096,13 @@ bridge_contract.options.from = adminAddress;
 // }
 
 // BinanceSmartChainToPolkadot Redeem Tx:
-const PolkadotRecipient = "0x50a80eb26a7fb43ff4f84ead705fc61c1d4074112e53f781a6b03c0c7504f663"
-const depositData = Helpers.createERCDepositData(
-  "0x29A2241AF62C0000",
-  32,
-  PolkadotRecipient
-);
-console.log(depositData)
+// const PolkadotRecipient = "0x50a80eb26a7fb43ff4f84ead705fc61c1d4074112e53f781a6b03c0c7504f663"
+// const depositData = Helpers.createERCDepositData(
+//   "0x29A2241AF62C0000",
+//   32,
+//   PolkadotRecipient
+// );
+// console.log(depositData)
 
 // PlatonToPolkadot Redeem Tx:
 // const PolkadotRecipient = "0x50a80eb26a7fb43ff4f84ead705fc61c1d4074112e53f781a6b03c0c7504f663"

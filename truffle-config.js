@@ -47,14 +47,14 @@ module.exports = {
       host: "127.0.0.1",     // Localhost (default: none)
       port: 6789,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
-      from: "atx18hqda4eajphkfarxaa2rutc5dwdwx9z5xzkega", //部署合约所使用的钱包地址
+      from: "atp18hqda4eajphkfarxaa2rutc5dwdwx9z5vy2nmh", //部署合约所使用的钱包地址
       gas: 4700000,
       gasPrice: 1,
     },
 
     alaya: {
       // provider: () => new Web3.providers.HttpProvider("https://openapi.alaya.network/rpc:6789"),
-      host: "127.0.0.1",     // Localhost (default: none)
+      host: "34.92.8.152",     // Localhost (default: none)
       port: 6789,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
       from: "atp18hqda4eajphkfarxaa2rutc5dwdwx9z5vy2nmh", //部署合约所使用的钱包地址
